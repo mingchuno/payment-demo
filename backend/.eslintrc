@@ -1,0 +1,17 @@
+{
+  extends: ["google"],
+  rules: {
+    max-len: ["warn", {"code": 100, "ignoreUrls": true}],
+    space-before-function-paren: ["error", {"anonymous": "always", "named": "never", "asyncArrow": "always"}],
+    arrow-parens: ["error", "as-needed"],
+    semi: ["error", "never"],
+    require-jsdoc: "warn"
+  },
+  env: {
+    "node": true,
+    "es6": true
+  },
+  parserOptions: {
+    ecmaVersion: 8
+  }
+}
