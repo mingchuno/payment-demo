@@ -4,6 +4,13 @@
  * Module dependencies.
  */
 
+// as early as possiable
+const result = require('dotenv').config()
+
+if (result.error) {
+  throw result.error
+}
+
 let app = require('../src/app')
 let debug = require('debug')('hk01-test:server')
 let http = require('http')

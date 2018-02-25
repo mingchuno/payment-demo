@@ -25,6 +25,12 @@ class ResourceNotFoundError extends BaseError {
   }
 }
 
+class RequestValidationError extends BaseError {
+  constructor(message) {
+    super(400, 10002, `invalid request:${message}`)
+  }
+}
+
 class UnknownServerError extends BaseError {
   constructor(message) {
     super(500, 10101, message)
@@ -35,4 +41,5 @@ module.exports = {
   BaseError,
   ResourceNotFoundError,
   UnknownServerError,
+  RequestValidationError,
 }
