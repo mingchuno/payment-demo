@@ -15,5 +15,5 @@ async function findByRefCode(refCode) {
 
 module.exports = {
   insertOne,
-  findByRefCode
+  findByRefCode,
 }

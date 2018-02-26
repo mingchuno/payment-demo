@@ -1,6 +1,6 @@
 // const winston = require('winston')
-const { createLogger, format, transports } = require('winston')
-const { combine, timestamp, printf, splat, colorize } = format
+const {createLogger, format, transports} = require('winston')
+const {combine, timestamp, printf, splat, colorize} = format
 
 const logger = createLogger({
   format: combine(
@@ -12,7 +12,7 @@ const logger = createLogger({
     })
   ),
   transports: [
-    new(transports.Console)()
+    new(transports.Console)(),
   ],
 })
 

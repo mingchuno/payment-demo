@@ -1,5 +1,5 @@
 const stripe = require('stripe')(process.env.HK01_PAYMENT_STRIPE_SK)
-const { logger } = require('../util/logger')
+const {logger} = require('../util/logger')
 const cardValidator = require('card-validator')
 const orderRepository = require('../repository/order-repository')
 
@@ -26,14 +26,14 @@ module.exports.paymentService = {
       currency: req.order.currency,
       amount: Math.trunc(req.order.price * 100),
       source: {
-          object: 'card',
-          number: req.payment.ccNumber,
-          exp_month: req.payment.ccExpire.month,
-          exp_year: req.payment.ccExpire.year,
-          cvc: req.payment.ccCCV,
-          name: req.payment.ccHolderName
+        object: 'card',
+        number: req.payment.ccNumber,
+        exp_month: req.payment.ccExpire.month,
+        exp_year: req.payment.ccExpire.year,
+        cvc: req.payment.ccCCV,
+        name: req.payment.ccHolderName,
       },
-      description: `Charge for ${req.payment.ccHolderName} with amount ${req.order.price}`
+      description: `Charge for ${req.payment.ccHolderName} with amount ${req.order.price}`,
     }
     // I have to turn off setting in stripe for it to work!
     const stripePaymentResult = await stripe.charges.create(stripePaymentInfo)
@@ -44,12 +44,12 @@ module.exports.paymentService = {
       currency: req.order.currency,
       price: req.order.price,
       gateway: gateway,
-      rawResponse: stripePaymentResult
+      rawResponse: stripePaymentResult,
     }
     await orderRepository.insertOne(paymentRecord)
     return paymentRecord
   },
   getPayment(req) {
     return null
-  }
+  },
 }

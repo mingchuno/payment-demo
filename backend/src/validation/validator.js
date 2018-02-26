@@ -1,9 +1,9 @@
-const { check, validationResult, checkSchema } = require('express-validator/check')
-const { matchedData, sanitize } = require('express-validator/filter')
+const {check, validationResult, checkSchema} = require('express-validator/check')
+const {matchedData, sanitize} = require('express-validator/filter')
 
-const ACCEPTED_CURRENCY = ['USD','HKD','AUD','EUR','JPY','CNY']
+const ACCEPTED_CURRENCY = ['USD', 'HKD', 'AUD', 'EUR', 'JPY', 'CNY']
 
-module.exports.errorFormatter = function({ location, msg, param, value, nestedErrors }) {
+module.exports.errorFormatter = function ({location, msg, param, value, nestedErrors}) {
   // Build your resulting errors however you want! String, object, whatever - it works!
   return `${location}[${param}]: ${msg}`
 }
@@ -17,14 +17,14 @@ module.exports.createPaymentReqValidator = checkSchema({
     isLength: {
       errorMessage: 'Fullname should be between 6-50 chars long',
       // Multiple options would be expressed as an array
-      options: { min: 6, max: 50 },
+      options: {min: 6, max: 50},
     },
   },
   'order.phoneNumber': {
     optional: false,
     in: ['body'],
     isMobilePhone: {
-      options: 'any' ,
+      options: 'any',
     },
     trim: true,
   },
@@ -40,8 +40,8 @@ module.exports.createPaymentReqValidator = checkSchema({
     optional: false,
     in: ['body'],
     isCurrency: {
-      options: { allow_negatives: false, digits_after_decimal: [1,2] }
-    }
+      options: {allow_negatives: false, digits_after_decimal: [1, 2]},
+    },
   },
   'payment.ccHolderName': {
     optional: false,
@@ -51,7 +51,7 @@ module.exports.createPaymentReqValidator = checkSchema({
     isLength: {
       errorMessage: 'Fullname should be between 6-50 chars long',
       // Multiple options would be expressed as an array
-      options: { min: 6, max: 50 },
+      options: {min: 6, max: 50},
     },
   },
   'payment.ccNumber': {

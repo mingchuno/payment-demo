@@ -5,7 +5,7 @@
   "main": "",
   "scripts": {
     "start": "nodemon ./bin/www",
-    "lint": "eslint ./**/*.js ./bin/* --fix",
+    "lint": "eslint ./src/**/*.js ./bin/* --fix",
     "test": "jest"
   },
   "dependencies": {

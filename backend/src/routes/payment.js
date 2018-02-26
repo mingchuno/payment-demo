@@ -1,10 +1,10 @@
 const express = require('express')
-const { logger } = require('../util/logger')
-const { jsonParser } = require('../middleware/middleware')
-const { errorFormatter, createPaymentReqValidator } = require('../validation/validator')
-const { validationResult } = require('express-validator/check')
+const {logger} = require('../util/logger')
+const {jsonParser} = require('../middleware/middleware')
+const {errorFormatter, createPaymentReqValidator} = require('../validation/validator')
+const {validationResult} = require('express-validator/check')
 const error = require('../error/error')
-const { paymentService } = require('../services/payment-service')
+const {paymentService} = require('../services/payment-service')
 
 const router = express.Router()
 
@@ -58,7 +58,7 @@ router.post('/', jsonParser, createPaymentReqValidator, function (req, res, next
     logger.warn('invalid request:\n%o', result.mapped())
     throw new error.RequestValidationError(result.formatWith(errorFormatter).array())
   }
-  paymentService.createPayment(req.body).then((value) => {
+  paymentService.createPayment(req.body).then(value => {
     res.status(200).end()
   })
 })
