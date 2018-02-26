@@ -1,11 +1,19 @@
 const MongoClient = require('mongodb').MongoClient
 
-MongoClient.connect('mongodb://localhost:27017/animals', function (err, db) {
-  if (err) throw err
-
-  db.collection('mammals').find().toArray(function (err, result) {
-    if (err) throw err
-
-    console.log(result)
-  })
+// since we only use 1 collection
+const collection = MongoClient.connect('mongodb://localhost:27017').then(client => {
+  return client.db('hk01').collection('payment')
 })
+
+async function insertOne(record) {
+  return (await collection).insertOne(record)
+}
+
+async function findByRefCode(refCode) {
+  return (await collection).findOne({'paymentRefCode': refCode})
+}
+
+module.exports = {
+  insertOne,
+  findByRefCode
+}

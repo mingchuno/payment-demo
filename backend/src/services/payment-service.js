@@ -1,7 +1,7 @@
 const stripe = require('stripe')(process.env.HK01_PAYMENT_STRIPE_SK)
 const { logger } = require('../util/logger')
 const cardValidator = require('card-validator')
-const _ = require('lodash')
+const orderRepository = require('../repository/order-repository')
 
 // some private function
 
@@ -46,10 +46,7 @@ module.exports.paymentService = {
       gateway: gateway,
       rawResponse: stripePaymentResult
     }
-    // logic
-    // call stripe API
-    // save DB & cache
-    // return
+    await orderRepository.insertOne(paymentRecord)
     return paymentRecord
   },
   getPayment(req) {

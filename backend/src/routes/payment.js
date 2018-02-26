@@ -32,6 +32,23 @@ const exampleRequestData = {
     ccCCV: 123,
   },
 }
+// {
+//   "order": {
+//     "fullname": "John Doe",
+//     "phoneNumber": "85212345678",
+//     "currency": "USD",
+//     "price": "1"
+//   },
+//   "payment": {
+//     "ccHolderName": "John Doe",
+//     "ccNumber": "4111 1111 1111 1111",
+//     "ccExpire": {
+//       "year": 2020,
+//       "month": 2
+//     },
+//     "ccCCV": 123
+//   }
+// }
 
 // POST payment
 router.post('/', jsonParser, createPaymentReqValidator, function (req, res, next) {
