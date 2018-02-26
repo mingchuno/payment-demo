@@ -6,7 +6,9 @@ const {validationResult} = require('express-validator/check')
 const error = require('../error/error')
 const {paymentService} = require('../services/payment-service')
 
+/*eslint-disable*/
 const router = express.Router()
+/* eslint-enable*/
 
 // GET payment details
 router.get('/', function (req, res, next) {
@@ -15,23 +17,6 @@ router.get('/', function (req, res, next) {
 
 // example POST data
 // TODO: remove later
-const exampleRequestData = {
-  order: {
-    fullname: 'John Doe',
-    phoneNumber: '+852 12345678',
-    currency: 'USD',
-    price: '1.23',
-  },
-  payment: {
-    ccHolderName: 'John Doe',
-    ccNumber: '4111 1111 1111 1111',
-    ccExpire: {
-      year: 2020,
-      month: 2,
-    },
-    ccCCV: 123,
-  },
-}
 // {
 //   "order": {
 //     "fullname": "John Doe",

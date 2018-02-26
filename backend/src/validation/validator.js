@@ -1,5 +1,4 @@
-const {check, validationResult, checkSchema} = require('express-validator/check')
-const {matchedData, sanitize} = require('express-validator/filter')
+const {checkSchema} = require('express-validator/check')
 
 const ACCEPTED_CURRENCY = ['USD', 'HKD', 'AUD', 'EUR', 'JPY', 'CNY']
 
