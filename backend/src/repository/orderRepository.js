@@ -1,5 +1,5 @@
 const MongoClient = require('mongodb').MongoClient
-const orderCache = require('./order-cache')
+const orderCache = require('./orderCache')
 
 // since we only use 1 collection
 const collection = MongoClient.connect('mongodb://localhost:27017').then(client => {

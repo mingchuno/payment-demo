@@ -4,7 +4,7 @@ const {jsonParser} = require('../middleware/middleware')
 const {errorFormatter, createPaymentReqValidator} = require('../validation/validator')
 const {validationResult} = require('express-validator/check')
 const error = require('../error/error')
-const {paymentService} = require('../services/payment-service')
+const paymentService = require('../services/paymentService')
 
 /*eslint-disable*/
 const router = express.Router()

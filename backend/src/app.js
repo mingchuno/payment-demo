@@ -3,7 +3,7 @@ const compression = require('compression')
 const bodyParser = require('body-parser')
 const payment = require('./routes/payment')
 const helmet = require('helmet')
-const {cors} = require('./middleware/middleware')
+const cors = require('cors')
 const {logger} = require('./util/logger')
 const error = require('./error/error')
 
@@ -11,9 +11,9 @@ const app = express()
 
 app.use(helmet())
 app.use(compression())
-app.use(cors)
+app.use(cors())
 app.use(bodyParser.urlencoded({extended: false}))
-
+app.options('*', cors())
 app.use('/api/v1/payment', payment)
 
 // catch 404 and forward to error handler

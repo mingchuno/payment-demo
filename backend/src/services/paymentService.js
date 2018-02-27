@@ -1,7 +1,7 @@
 const stripe = require('stripe')(process.env.HK01_PAYMENT_STRIPE_SK)
 const {logger} = require('../util/logger')
 const cardValidator = require('card-validator')
-const orderRepository = require('../repository/order-repository')
+const orderRepository = require('../repository/orderRepository')
 
 // some private function
 
@@ -18,9 +18,8 @@ function isGatewayA(req) {
   return isCardAE(req.payment.ccNumber) || isCurrencyFitGatewayA(req.order.currency)
 }
 
-module.exports.paymentService = {
+module.exports = {
   async createPayment(req) {
-    logger.info('arrive paymentService.createPayment')
     const gateway = isGatewayA(req) ? 'gateway_a' : 'gateway_b'
     const stripePaymentInfo = {
       currency: req.order.currency,
