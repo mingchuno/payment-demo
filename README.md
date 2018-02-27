@@ -45,3 +45,4 @@ yarn dev
 - backend test using jest
 - frontend test?
 - backend use `import` instead of `require()`? (Need Babel)
+- server graceful teardown

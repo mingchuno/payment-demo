@@ -2,11 +2,11 @@
   "name": "hk01-test",
   "version": "0.0.1",
   "private": true,
-  "main": "",
+  "main": "./bin/www",
   "scripts": {
     "start": "nodemon ./bin/www",
     "lint": "eslint ./src/**/*.js ./bin/* --fix",
-    "test": "jest"
+    "test": "jest --coverage"
   },
   "dependencies": {
     "body-parser": "~1.18.2",
@@ -29,6 +29,14 @@
     "eslint-config-google": "^0.9.1",
     "jest": "^22.4.2",
     "nodemon": "^1.15.1"
+  },
+  "jest": {
+    "verbose": true,
+    "collectCoverageFrom": [
+      "**/src/**/*.js"
+    ],
+    "coverageDirectory": "./coverage",
+    "coverageReporters": ["json", "lcov", "text"]
   },
   "license": "MIT",
   "description": "HK01 offsite test backend api server"
