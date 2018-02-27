@@ -10,7 +10,8 @@
     "build": "poi build",
     "report": "poi build --bundle-report",
     "serve": "serve dist --single",
-    "test": "tyu"
+    "test": "tyu",
+    "lint": "eslint ./src/** --ext .vue --ext .js --fix"
   },
   "author": {
     "name": "mingchuno",

@@ -5,7 +5,7 @@
     space-before-function-paren: ["error", {"anonymous": "always", "named": "never", "asyncArrow": "always"}],
     arrow-parens: ["error", "as-needed"],
     semi: ["error", "never"],
-    require-jsdoc: "warn"
+    require-jsdoc: "off"
   },
   env: {
     "node": true,

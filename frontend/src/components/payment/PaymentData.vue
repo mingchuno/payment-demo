@@ -33,11 +33,11 @@ export default {
       this.loading = true
       const [err, resp] = await api.getPayment(this.form.refCode)
       this.loading = false
-      this.tableData = []
       if (err) {
         const data = err.response.data
         this.$message.error(`request error: statusCode=${data.statusCode}, errorCode=${data.errorCode}`)
       } else {
+        this.tableData = []
         // show data, hacky
         const data = resp.data
         delete data['_id']

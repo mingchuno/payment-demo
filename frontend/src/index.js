@@ -5,7 +5,7 @@ import locale from 'element-ui/lib/locale/lang/en'
 import App from './components/App.vue'
 
 Vue.config.productionTip = false
-Vue.use(Element, {locale})
+Vue.use(Element, { locale })
 
 new Vue({
   el: '#app',

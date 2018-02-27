@@ -50,14 +50,14 @@ export default {
       loading: false,
       request: {
         order: {
-          fullname: "John Doe",
-          phoneNumber: "852 21800000",
-          currency: "USD",
-          price: "1.00"
+          fullname: 'John Doe',
+          phoneNumber: '852 21800000',
+          currency: 'USD',
+          price: '1.00'
         },
         payment: {
-          ccHolderName: "John Doe",
-          ccNumber: "4111 1111 1111 1111",
+          ccHolderName: 'John Doe',
+          ccNumber: '4111 1111 1111 1111',
           ccExpire: {
             year: 2020,
             month: 2
