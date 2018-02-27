@@ -1,5 +1,9 @@
 # HK01 offsite backend test
 
+## devops
+
+To start the mongodb and redis for development, install `docker-compose` backend `docker-compose up -d` at `./devops`
+
 ## backend
 
 `backend` is the API backend using:
@@ -7,9 +11,9 @@
 - express as the API framework
 - mongodb as database
 - redis as cache
-- flow for type check
+- flow for type check (TODO)
 - eslint for lint
-- TODO: test & mock framework
+- jest as test & mock framework (TODO)
 
 ### Get start
 
@@ -24,10 +28,11 @@ yarn start
 
 - vue.js as the frontend framework
 - element-ui as the UI framework
+- eslint for lint
 
 ### Get start
 
 ```
 yarn install
-yarn run
+yarn dev
 ```
