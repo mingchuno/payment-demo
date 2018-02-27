@@ -1,0 +1,12 @@
+{
+  extends: ["google", "plugin:vue-libs/recommended"],
+  rules: {
+    max-len: ["warn", {"code": 100, "ignoreUrls": true}],
+    space-before-function-paren: ["error", {"anonymous": "always", "named": "never", "asyncArrow": "always"}],
+    arrow-parens: ["error", "as-needed"],
+    require-jsdoc: 1
+  },
+  "env": {
+    "browser": true
+  }
+}

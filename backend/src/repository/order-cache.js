@@ -4,7 +4,9 @@ const redis = require('redis')
 const client = redis.createClient()
 
 function get(key) {
-  return promisify(client.get).bind(client)(getKey(key))
+  return promisify(client.get).bind(client)(getKey(key)).then(value => {
+    return JSON.parse(value)
+  })
 }
 
 function setex(key, ttl = 3000, value) {

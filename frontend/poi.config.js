@@ -17,6 +17,7 @@ module.exports = {
     ]
   },
   presets: [
-    require('poi-preset-bundle-report')()
+    require('poi-preset-bundle-report')(),
+    require('poi-preset-eslint')()
   ]
 }
