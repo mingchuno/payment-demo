@@ -36,3 +36,12 @@ yarn start
 yarn install
 yarn dev
 ```
+
+## TODOs
+
+- client form validation
+- better server side validation
+- flow in server side (do we need Webpack and Babel?)
+- backend test using jest
+- frontend test?
+- backend use `import` instead of `require()`? (Need Babel)
