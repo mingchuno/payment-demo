@@ -44,12 +44,13 @@ module.exports.paymentService = {
       currency: req.order.currency,
       price: req.order.price,
       gateway: gateway,
+      createdAt: Date.now(),
       rawResponse: stripePaymentResult,
     }
     await orderRepository.insertOne(paymentRecord)
     return paymentRecord
   },
-  getPayment(req) {
-    return null
+  async getPayment(refCode) {
+    return await orderRepository.findByRefCode(refCode)
   },
 }

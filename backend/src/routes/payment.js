@@ -11,41 +11,26 @@ const router = express.Router()
 /* eslint-enable*/
 
 // GET payment details
-router.get('/', function (req, res, next) {
-  res.status(200).end()
+router.get('/:refCode', async function (req, res, next) {
+  const record = await paymentService.getPayment(req.params.refCode)
+  if (record) {
+    res.json(record)
+  } else {
+    next(new error.ResourceNotFoundError(req))
+  }
 })
 
-// example POST data
-// TODO: remove later
-// {
-//   "order": {
-//     "fullname": "John Doe",
-//     "phoneNumber": "85212345678",
-//     "currency": "USD",
-//     "price": "1"
-//   },
-//   "payment": {
-//     "ccHolderName": "John Doe",
-//     "ccNumber": "4111 1111 1111 1111",
-//     "ccExpire": {
-//       "year": 2020,
-//       "month": 2
-//     },
-//     "ccCCV": 123
-//   }
-// }
-
 // POST payment
-router.post('/', jsonParser, createPaymentReqValidator, function (req, res, next) {
+router.post('/', jsonParser, createPaymentReqValidator, async function (req, res, next) {
   logger.info('req body:\n%o', req.body)
   const result = validationResult(req)
   if (!result.isEmpty()) {
     logger.warn('invalid request:\n%o', result.mapped())
-    throw new error.RequestValidationError(result.formatWith(errorFormatter).array())
+    next(new error.RequestValidationError(result.formatWith(errorFormatter).array()))
+  } else {
+    const paymentRecord = await paymentService.createPayment(req.body)
+    res.json(paymentRecord)
   }
-  paymentService.createPayment(req.body).then(value => {
-    res.status(200).end()
-  })
 })
 
 module.exports = router

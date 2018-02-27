@@ -16,8 +16,10 @@
     "dotenv": "^5.0.0",
     "express": "~4.15.5",
     "express-validator": "^5.0.1",
+    "helmet": "^3.11.0",
     "lodash": "^4.17.5",
     "mongodb": "^3.0.3",
+    "redis": "^2.8.0",
     "stripe": "^5.5.0",
     "winston": "^3.0.0-rc1"
   },
