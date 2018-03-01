@@ -15,7 +15,7 @@ async function findByRefCode(refCode) {
   if (cache) return cache
   const dbRecord = await (await collection).findOne({'paymentRefCode': refCode})
   if (dbRecord) {
-    orderCache.setex(refCode, 3000, JSON.stringify(dbRecord))
+    orderCache.setex(refCode, dbRecord)
   }
   return dbRecord
 }
