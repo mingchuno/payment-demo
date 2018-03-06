@@ -20,7 +20,7 @@ function get(key) {
  * @param  {string} key string key value which will be expend into `hk01:order:${key}`
  * @param  {object} value object to be saved into redis
  * @param  {number} [ttl=3000] ttl in second
- * @return {[type]} [description]
+ * @return {string|null} string "OK" or null
  */
 function setex(key, value, ttl = 3000) {
   if (key && value && _.isObject(value)) {
@@ -37,5 +37,4 @@ function getKey(key) {
 module.exports = {
   get,
   setex,
-  client
 }

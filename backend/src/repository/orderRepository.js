@@ -1,5 +1,6 @@
 const MongoClient = require('mongodb').MongoClient
 const orderCache = require('./orderCache')
+const {logger} = require('../util/logger')
 
 // since we only use 1 collection
 const collection = MongoClient.connect('mongodb://localhost:27017').then(client => {
@@ -20,7 +21,19 @@ async function findByRefCode(refCode) {
   return dbRecord
 }
 
+// init code
+(async function () {
+  (await collection).createIndex('paymentRefCode', {unique: true}, (err, name) => {
+    if (err) {
+      logger.warn(`error when create index:${err}`)
+    } else {
+      logger.info(`create index success with name:${name}`)
+    }
+  })
+})()
+
 module.exports = {
   insertOne,
   findByRefCode,
+  collection,
 }

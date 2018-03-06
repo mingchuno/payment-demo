@@ -1,10 +1,8 @@
-const stripe = require('stripe')(process.env.HK01_PAYMENT_STRIPE_SK)
-const {logger} = require('../util/logger')
 const cardValidator = require('card-validator')
 const orderRepository = require('../repository/orderRepository')
+const stripeService = require('./stripeService')
 
 // some private function
-
 function isCardAE(cardNumber) {
   return cardValidator.number(cardNumber).card.type === 'american-express'
 }
@@ -35,7 +33,7 @@ module.exports = {
       description: `Charge for ${req.payment.ccHolderName} with amount ${req.order.price}`,
     }
     // I have to turn off setting in stripe for it to work!
-    const stripePaymentResult = await stripe.charges.create(stripePaymentInfo)
+    const stripePaymentResult = await stripeService.create(stripePaymentInfo)
     const paymentRecord = {
       customerName: req.order.fullname,
       paymentRefCode: stripePaymentResult.id,
