@@ -14,7 +14,7 @@ function genRecord(uuid) {
   }
 }
 
-describe('OrderRepository', () => {
+describe('Order repository', () => {
   const uuid = uuidv4()
   const record = genRecord(uuid)
 

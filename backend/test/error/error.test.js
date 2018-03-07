@@ -1,6 +1,6 @@
 const error = require('../../src/error/error')
 
-describe('error class', () => {
+describe('Error class', () => {
   test('error toJson should work', () => {
     const json = new error.UnknownServerError('error').toJson()
     expect(json.statusCode).toBe(500)

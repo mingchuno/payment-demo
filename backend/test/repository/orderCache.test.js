@@ -1,6 +1,6 @@
 const orderCache = require('../../src/repository/orderCache')
 
-describe('OrderCache', () => {
+describe('Order cache', () => {
   test('should return null for non-exist key', async () => {
     const key = 'non-exist-key'
     const result = await orderCache.get(key)
