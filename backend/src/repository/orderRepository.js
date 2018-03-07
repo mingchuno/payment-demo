@@ -1,3 +1,4 @@
+// @flow
 const MongoClient = require('mongodb').MongoClient
 const orderCache = require('./orderCache')
 const {logger} = require('../util/logger')
@@ -7,11 +8,11 @@ const collection = MongoClient.connect('mongodb://localhost:27017').then(client 
   return client.db('hk01').collection('payment')
 })
 
-async function insertOne(record) {
+async function insertOne(record: any) {
   return (await collection).insertOne(record)
 }
 
-async function findByRefCode(refCode) {
+async function findByRefCode(refCode: string) {
   const cache = await orderCache.get(refCode)
   if (cache) return cache
   const dbRecord = await (await collection).findOne({'paymentRefCode': refCode})

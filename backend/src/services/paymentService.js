@@ -1,3 +1,4 @@
+// @flow
 const cardValidator = require('card-validator')
 const orderRepository = require('../repository/orderRepository')
 const stripeService = require('./stripeService')
@@ -47,7 +48,7 @@ module.exports = {
     await orderRepository.insertOne(paymentRecord)
     return paymentRecord
   },
-  async getPayment(refCode) {
+  async getPayment(refCode: string) {
     return await orderRepository.findByRefCode(refCode)
   },
 }

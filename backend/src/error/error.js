@@ -1,5 +1,10 @@
+// @flow
 class BaseError extends Error {
-  constructor(statusCode, errorCode, message) {
+  statusCode: number
+  name: string
+  errorCode: number
+
+  constructor(statusCode: number, errorCode: number, message: string) {
     super(message)
     this.name = this.constructor.name
     this.statusCode = statusCode
@@ -26,13 +31,13 @@ class ResourceNotFoundError extends BaseError {
 }
 
 class RequestValidationError extends BaseError {
-  constructor(message) {
+  constructor(message: string) {
     super(400, 10002, `invalid request:${message}`)
   }
 }
 
 class UnknownServerError extends BaseError {
-  constructor(message) {
+  constructor(message: string) {
     super(500, 10101, message)
   }
 }

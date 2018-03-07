@@ -1,3 +1,4 @@
+// @flow
 const {promisify} = require('util')
 const redis = require('redis')
 const _ = require('lodash')
@@ -9,7 +10,7 @@ const client = redis.createClient()
  * @param  {string} key string key value which will be expend into `hk01:order:${key}`
  * @return {object} object parsed from the string cached value
  */
-function get(key) {
+function get(key: string) {
   return promisify(client.get).bind(client)(getKey(key)).then(value => {
     return JSON.parse(value)
   })
@@ -22,7 +23,7 @@ function get(key) {
  * @param  {number} [ttl=3000] ttl in second
  * @return {string|null} string "OK" or null
  */
-function setex(key, value, ttl = 3000) {
+function setex(key: string, value: ?any, ttl: number = 3000) {
   if (key && value && _.isObject(value)) {
     return promisify(client.setex).bind(client)(getKey(key), ttl, JSON.stringify(value))
   } else {
@@ -30,7 +31,7 @@ function setex(key, value, ttl = 3000) {
   }
 }
 
-function getKey(key) {
+function getKey(key: string) {
   return `hk01:order:${key}`
 }
 

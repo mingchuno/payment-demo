@@ -1,5 +1,9 @@
 {
   extends: ["google"],
+  "parser": "babel-eslint",
+  "plugins": [
+    "flowtype"
+  ],
   rules: {
     max-len: ["warn", {"code": 100, "ignoreUrls": true}],
     space-before-function-paren: ["error", {"anonymous": "always", "named": "never", "asyncArrow": "always"}],

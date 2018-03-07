@@ -1,3 +1,4 @@
+// @flow
 const bodyParser = require('body-parser')
 
 // create application/json parser
