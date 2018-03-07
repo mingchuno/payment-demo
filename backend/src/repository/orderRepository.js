@@ -8,7 +8,7 @@ const collection = MongoClient.connect('mongodb://localhost:27017').then(client 
   return client.db('hk01').collection('payment')
 })
 
-async function insertOne(record: any) {
+async function insertOne(record: Object) {
   return (await collection).insertOne(record)
 }
 

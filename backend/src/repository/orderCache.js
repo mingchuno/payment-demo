@@ -23,7 +23,7 @@ function get(key: string) {
  * @param  {number} [ttl=3000] ttl in second
  * @return {string|null} string "OK" or null
  */
-function setex(key: string, value: ?any, ttl: number = 3000) {
+function setex(key: string, value: ?Object, ttl: number = 3000) {
   if (key && value && _.isObject(value)) {
     return promisify(client.setex).bind(client)(getKey(key), ttl, JSON.stringify(value))
   } else {
