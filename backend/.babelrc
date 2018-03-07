@@ -1,0 +1,8 @@
+{
+  "presets": ["flow"],
+  "comments": false,
+  "minified": true,
+  "ignore": [
+    "**/__mocks__/*"
+  ]
+}

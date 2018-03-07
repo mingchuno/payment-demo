@@ -11,7 +11,7 @@ if (result.error) {
   throw result.error
 }
 
-let app = require('../src/app')
+let app = require('./app')
 let debug = require('debug')('hk01-test:server')
 let http = require('http')
 

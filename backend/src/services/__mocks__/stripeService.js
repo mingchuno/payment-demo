@@ -5,8 +5,8 @@ module.exports = {
     return {
       id: uuidv4(),
       data: {
-        foo: "bar"
-      }
+        foo: 'bar',
+      },
     }
-  }
+  },
 }
