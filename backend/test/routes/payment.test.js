@@ -38,7 +38,7 @@ describe('payment controller', () => {
   test('create payment should fail for incorrect name', async () => {
     return request(app)
       .post('/api/v1/payment')
-      .send(Object.assign({}, CORRECT_REQ, {order: { fullname: 'May' }}))
+      .send(Object.assign({}, CORRECT_REQ, {order: {fullname: 'May'}}))
       .set('accept', 'json')
       .expect(400)
   })
