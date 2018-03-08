@@ -3,6 +3,30 @@ const cardValidator = require('card-validator')
 const orderRepository = require('../repository/orderRepository')
 const stripeService = require('./stripeService')
 
+type Order = {
+  fullname: string,
+  phoneNumber: string,
+  currency: string,
+  price: number
+}
+
+type Expire = {
+  year: number,
+  month: number
+}
+
+type Payment = {
+  ccHolderName: string,
+  ccNumber: string,
+  ccExpire: Expire,
+  ccCCV: number
+}
+
+type CreatePaymentRequest = {
+  order: Order,
+  payment: Payment
+}
+
 // some private function
 function isCardAE(cardNumber) {
   return cardValidator.number(cardNumber).card.type === 'american-express'
@@ -18,7 +42,7 @@ function isGatewayA(req) {
 }
 
 module.exports = {
-  async createPayment(req) {
+  async createPayment(req: CreatePaymentRequest) {
     const gateway = isGatewayA(req) ? 'gateway_a' : 'gateway_b'
     const stripePaymentInfo = {
       currency: req.order.currency,
