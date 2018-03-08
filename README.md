@@ -11,15 +11,15 @@ To start the mongodb and redis for development, install `docker-compose` backend
 - express as the API framework
 - mongodb as database
 - redis as cache
-- flow for type check (TODO)
+- flow for type check
 - eslint for lint
-- jest as test & mock framework (TODO)
+- jest as test & mock framework
 
 ### Get start
 
 ```
 yarn install
-yarn start
+yarn dev
 ```
 
 ## frontend
@@ -41,6 +41,5 @@ yarn dev
 
 - client form validation
 - better server side validation
-- flow in server side (do we need Webpack and Babel?)
 - frontend test?
 - server graceful showdown?
