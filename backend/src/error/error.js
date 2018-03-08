@@ -25,7 +25,7 @@ class BaseError extends Error {
 }
 
 class ResourceNotFoundError extends BaseError {
-  constructor(req) {
+  constructor(req: express$Request) {
     super(404, 10001, `resource not found in server:${req.method}:${req.path}`)
   }
 }

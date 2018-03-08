@@ -1,7 +1,7 @@
 {
   extends: ["google"],
-  "parser": "babel-eslint",
-  "plugins": [
+  parser: "babel-eslint",
+  plugins: [
     "flowtype"
   ],
   rules: {
