@@ -12,7 +12,7 @@ if (result.error) {
 }
 
 let app = require('./app')
-let debug = require('debug')('hk01-test:server')
+let debug = require('debug')('payment-demo:server')
 let http = require('http')
 
 /**

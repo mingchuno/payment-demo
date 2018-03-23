@@ -7,7 +7,7 @@ const client = redis.createClient()
 
 /**
  * get cached object from redis
- * @param  {string} key string key value which will be expend into `hk01:order:${key}`
+ * @param  {string} key string key value which will be expend into `payment-demo:order:${key}`
  * @return {object} object parsed from the string cached value
  */
 function get(key: string) {
@@ -18,7 +18,7 @@ function get(key: string) {
 
 /**
  * set object into cache
- * @param  {string} key string key value which will be expend into `hk01:order:${key}`
+ * @param  {string} key string key value which will be expend into `payment-demo:order:${key}`
  * @param  {object} value object to be saved into redis
  * @param  {number} [ttl=3000] ttl in second
  * @return {string|null} string "OK" or null
@@ -32,7 +32,7 @@ function setex(key: string, value: ?Object, ttl: number = 3000) {
 }
 
 function getKey(key: string) {
-  return `hk01:order:${key}`
+  return `payment-demo:order:${key}`
 }
 
 module.exports = {

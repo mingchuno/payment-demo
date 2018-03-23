@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <el-container>
-      <el-header height="5rem"><h2>HK01 payment offsite test</h2></el-header>
+      <el-header height="5rem"><h2>Payment Demo</h2></el-header>
       <el-main>
         <payment></payment>
       </el-main>

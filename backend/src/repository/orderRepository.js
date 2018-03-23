@@ -5,7 +5,7 @@ const {logger} = require('../util/logger')
 
 // since we only use 1 collection
 const collection = MongoClient.connect('mongodb://localhost:27017').then(client => {
-  return client.db('hk01').collection('payment')
+  return client.db('payment-db').collection('payment')
 })
 
 async function insertOne(record: Object) {

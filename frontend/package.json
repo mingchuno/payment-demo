@@ -1,8 +1,8 @@
 {
   "private": true,
-  "name": "hk01-test-frontend",
-  "productName": "hk01-test-frontend",
-  "description": "HK01 offsite test frontend part",
+  "name": "payment-demo-frontend",
+  "productName": "payment-demo-frontend",
+  "description": "payment demo frontend part",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {

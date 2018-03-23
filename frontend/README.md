@@ -1,6 +1,6 @@
-# hk01-test-frontend
+# payment demo frontend
 
-> HK01 offsite test frontend part
+> payment demo frontend part
 
 ## Commands
 
