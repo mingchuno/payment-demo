@@ -1,4 +1,4 @@
-# HK01 offsite backend test
+# express/node.js simple payment service
 
 ## devops
 
