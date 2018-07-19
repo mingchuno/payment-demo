@@ -31,7 +31,7 @@
     "poi": "^9.0.0",
     "poi-preset-bundle-report": "^2.0.0",
     "poi-preset-eslint": "^9.1.1",
-    "serve": "^6.1.0",
+    "serve": "^9.2.0",
     "tyu": "^1.0.4"
   }
 }
