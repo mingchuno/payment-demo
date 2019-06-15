@@ -1,5 +1,7 @@
 # express/node.js simple payment service
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/mingchuno/payment-demo.svg)](https://greenkeeper.io/)
+
 ## devops
 
 To start the mongodb and redis for development, install `docker-compose` backend `docker-compose up -d` at `./devops`
