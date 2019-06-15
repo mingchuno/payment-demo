@@ -18,20 +18,20 @@
     "email": "mingchuno@gmail.com"
   },
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.19.0",
     "element-ui": "^2.2.0",
-    "normalize.css": "^7.0.0",
+    "normalize.css": "^8.0.1",
     "object-assign": "^4.1.1",
-    "promise-polyfill": "^6.0.2"
+    "promise-polyfill": "^8.1.2"
   },
   "devDependencies": {
-    "eslint": "^4.18.1",
-    "eslint-config-google": "^0.9.1",
-    "eslint-plugin-vue-libs": "^2.1.0",
-    "poi": "^9.0.0",
+    "eslint": "^5.16.0",
+    "eslint-config-google": "^0.13.0",
+    "eslint-plugin-vue-libs": "^3.0.0",
+    "poi": "^12.6.10",
     "poi-preset-bundle-report": "^2.0.0",
     "poi-preset-eslint": "^9.1.1",
-    "serve": "^9.2.0",
+    "serve": "^11.0.1",
     "tyu": "^1.0.4"
   }
 }
