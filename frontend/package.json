@@ -18,7 +18,7 @@
     "email": "mingchuno@gmail.com"
   },
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.3",
     "element-ui": "^2.2.0",
     "normalize.css": "^7.0.0",
     "object-assign": "^4.1.1",
